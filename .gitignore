@@ -1,0 +1,29 @@
+# Environnements virtuels
+env/
+venv/
+.venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Fichiers de configuration de l’IDE
+.vscode/
+.idea/
+
+# Mac OS
+.DS_Store
+
+# Pytest cache
+.pytest_cache/
+
+# SQLite database (si tu en utilises)
+*.db
+*.sqlite3
+
+# Fichiers secrets ou tokens
+*.env
