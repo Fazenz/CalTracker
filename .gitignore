@@ -8,8 +8,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Logs
+# Logs et pid
 *.log
+*.pid
+*.sock
 
 # Fichiers de configuration de l’IDE
 .vscode/
@@ -21,9 +23,15 @@ __pycache__/
 # Pytest cache
 .pytest_cache/
 
-# SQLite database (si tu en utilises)
+# SQLite database
 *.db
 *.sqlite3
 
 # Fichiers secrets ou tokens
 *.env
+
+# Cache pip
+pip-wheel-metadata/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
