@@ -1,17 +1,24 @@
-from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from .database import Base
 
+# --------------------------
+# Modèle utilisateur
+# --------------------------
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, nullable=False)
+    refresh_token = Column(String, nullable=True)
+    refresh_token_expires_at = Column(DateTime, nullable=True)
 
     consumptions = relationship("Consumption", back_populates="user")
 
-
+# --------------------------
+# Modèle aliment
+# --------------------------
 class Food(Base):
     __tablename__ = "foods"
 
@@ -24,7 +31,9 @@ class Food(Base):
 
     consumptions = relationship("Consumption", back_populates="food")
 
-
+# --------------------------
+# Modèle consommation
+# --------------------------
 class Consumption(Base):
     __tablename__ = "consumptions"
 
